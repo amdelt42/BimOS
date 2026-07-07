@@ -118,13 +118,6 @@
 	nixpkgs.config.permittedInsecurePackages = [ "ventoy-1.1.12"	];
 	environment.systemPackages = [ pkgs.ventoy ];
 	services.openssh.enable = true;
-	# Enable Agenix symlink and user permission to BimOS repo deploy key
-	age.secrets.bimserver-deploy-key = {
-    file = ../../secrets/bimserver-deploy-key.age;
-    mode = "0400";
-    owner = homeuser;
-    group = "users";
-  };
 
 	# State Version
 	system.stateVersion = "26.05"; 

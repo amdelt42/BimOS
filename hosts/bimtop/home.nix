@@ -20,24 +20,6 @@
 		};
 	};
 
-	# Github over ssh runs deploy key per specified repo
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-    settings = {
-			"github-bimos" = {
-				HostName = "github.com"; 
-				IdentityFile = "/run/agenix/bimserver-deploy-key"; 
-				IdentitiesOnly = "yes"; 
-			};
-		# "github-another-repo" = {
-    #   HostName = "github.com";
-    #   IdentityFile = "/run/agenix/another-deploy-key";
-    #   IdentitiesOnly = true;
-    # };
-    };
-  };
-
 	hm = {
 		desktop = {
 			hyprlock.enable = true;
