@@ -1,0 +1,103 @@
+* {
+  font-size: 12px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: transparent;
+  margin: 0px;
+}
+
+tooltip {
+  background: #282a36;
+  border: 1.250000px solid #282a36;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+tooltip label {
+  color: #ffffff;
+  text-shadow: none;
+}
+
+#workspaces,
+.modules-center,
+.modules-right {
+  background: #282a36;
+  border-radius: 10px;
+  margin: 10px 20px 0;
+  padding: 0 4px;
+  border: 1.250000px solid #282a36;
+}
+
+#leftpill {
+  background: #282a36;
+  border-radius: 10px;
+  margin: 10px 0 0;
+  padding: 0 4px;
+  border: 1.250000px solid #282a36;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  color: #ffffff;
+  background: transparent;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+/* hover highlight */
+#workspaces button:hover, #clock:hover, #backlight:hover, #custom-camera:hover,
+#cpu:hover, #memory:hover, #network:hover, #bluetooth:hover,
+#pulseaudio:hover, #battery:hover, #custom-notifications:hover { 
+  background: #343947; 
+  border-radius: 10px;
+}
+
+#workspaces button.active { color: #80bfff; }
+
+#window { color: #9ea8c7; font-style: italic; padding: 0 12px; }
+
+#clock { color: #ffffff; font-weight: bold; padding: 0 16px; }
+
+/* fg */
+#cpu, #memory, #network, #bluetooth, #backlight, #custom-camera,
+#pulseaudio, #battery, #tray, #custom-notifications {
+  padding: 0 12px;
+  color: #ffffff;
+}
+
+#bluetooth.on,
+#bluetooth.connected    { color: #80bfff; }
+
+#bluetooth.off,
+#bluetooth.disabled     { color: #9ea8c7; }
+
+#battery.warning  { color: #ffb86c; }
+#battery.critical { color: #ff5555; }
+#battery.charging { color: #50fa7b; }
+
+#pulseaudio.muted { color: #9ea8c7; }
+
+#custom-camera          { color: #ffffff; }
+#custom-camera.inactive { color: #9ea8c7; }
+
+#custom-notifications { font-size: 14px; }
+
+#tray {
+  padding: 0;
+  margin: 0 12px;   
+  min-width: 0;
+}
+
+#tray.active {
+  padding: 0 12px;
+}
+
+#tray > .passive         { -gtk-icon-effect: dim; }
+#tray > .needs-attention { -gtk-icon-effect: highlight; }
+
+#tray > button {
+  padding: 0;
+  margin: 0;
+}

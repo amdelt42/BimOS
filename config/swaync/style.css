@@ -1,0 +1,179 @@
+* {
+  all: unset;
+  font-family: "CaskaydiaCove Nerd Font", sans-serif;
+  font-size: 13px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.notification-row {
+  outline: none;
+  padding: 6px 0;
+}
+
+.notification {
+  background: #282a36D9;
+  /*border: 1.25px solid #80bfff;*/
+  border-radius: 20px;
+  margin: 0 6px;
+  padding: 12px 14px;
+  color: #ffffff;
+}
+
+.notification-content {
+  padding: 4px 0;
+}
+
+.notification-default-action,
+.notification-action {
+  background: transparent;
+  border: 1px solid #80bfff8C;
+  border-radius: 12px;
+  color: #80bfff;
+  padding: 4px 12px;
+  margin: 4px 4px 0 0;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: #80bfff8C;
+  color: #ffffff;
+}
+
+.notification-urgency-low    { border-left: 3px solid #6272a4; }
+.notification-urgency-normal { border-left: 3px solid #80bfff; }
+.notification-urgency-critical {
+  border-left: 3px solid #ff5555;
+  border-color: #ff5555;
+}
+
+.summary {
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.time {
+  font-size: 11px;
+  color: #6272a4;
+}
+
+.body {
+  font-size: 12px;
+  color: #ffffff;
+  opacity: 0.85;
+}
+
+.app-icon {
+  -gtk-icon-size: 36px;
+  margin-right: 10px;
+}
+
+.image { border-radius: 10px; }
+
+.close-button {
+  background: transparent;
+  border: 1px solid #80bfff8C;
+  border-radius: 50%;
+  color: #6272a4;
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+}
+
+.close-button:hover {
+  background: #80bfff8C;
+  color: #ffffff;
+}
+
+/* The entire swaync control center */
+.control-center {
+  background: #282a36D9;
+  /*border: 1.25px solid #80bfff;*/
+  border-radius: 10px;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.widget-title {
+  padding: 8px 8px 4px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.widget-title > button {
+  background: transparent;
+  border: 1px solid #80bfff8C;
+  border-radius: 12px;
+  color: #80bfff;
+  padding: 3px 12px;
+  font-size: 12px;
+}
+
+.widget-title > button:hover {
+  background: #80bfff8C;
+  color: #ffffff;
+}
+
+.widget-dnd { padding: 6px 8px; }
+
+.widget-dnd > switch {
+  background: #6272a4;
+  border-radius: 10px;
+  min-width: 36px;
+  min-height: 18px;
+  border: none;
+}
+
+.widget-dnd > switch:checked { background: #80bfff; }
+
+.widget-dnd > switch slider {
+  background: #ffffff;
+  border-radius: 50%;
+  min-width: 14px;
+  min-height: 14px;
+  margin: 2px;
+}
+
+.separator {
+  background: #80bfff8C;
+  min-height: 1px;
+  margin: 4px 8px;
+}
+
+.notification-group { padding: 4px 0; }
+
+.notification-group-header {
+  font-size: 11px;
+  color: #6272a4;
+  font-weight: bold;
+  padding: 4px 10px 2px;
+}
+
+.notification-group-collapse-button {
+  background: transparent;
+  border: 1px solid #80bfff8C;
+  border-radius: 12px;
+  color: #80bfff;
+  padding: 2px 10px;
+  margin: 2px 6px;
+  font-size: 11px;
+}
+
+.notification-group-collapse-button:hover {
+  background: #80bfff8C;
+  color: #ffffff;
+}
+
+/* Hide the ugly placeholder image when there are no notifications */
+.control-center-list-placeholder image {
+  -gtk-icon-size: 0;
+  opacity: 0;
+  min-width: 0;
+  min-height: 0;
+}
+
+.control-center-list-placeholder label {
+  color: #6272a4;
+  font-size: 20px;
+}

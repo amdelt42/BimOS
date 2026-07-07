@@ -1,0 +1,12 @@
+{ config, ... }:
+{
+  xdg.userDirs = {
+    enable = true;
+    desktop = "${config.home.homeDirectory}/Desktop";
+    documents = "${config.home.homeDirectory}/Documents";
+    download = "${config.home.homeDirectory}/Downloads";
+    pictures = "${config.home.homeDirectory}/Pictures";
+    videos = "${config.home.homeDirectory}/Videos";
+    music = "${config.home.homeDirectory}/Music";
+  };
+}

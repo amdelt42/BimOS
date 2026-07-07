@@ -1,0 +1,44 @@
+{
+  "control-center-height": 700,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-left": 20,
+  "control-center-margin-right": 20,
+  "control-center-margin-top": 0,
+  "control-center-positionX": "right",
+  "control-center-positionY": "center",
+  "control-center-width": 400,
+  "fit-to-screen": false,
+  "hide-on-action": true,
+  "hide-on-clear": false,
+  "image-visibility": "when-available",
+  "keyboard-shortcuts": true,
+  "layer": "overlay",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "notification-2fa-action": true,
+  "notification-grouping": true,
+  "notification-window-width": 420,
+  "positionX": "right",
+  "positionY": "center",
+  "relative-timestamps": true,
+  "text-empty": "No notifications",
+  "timeout": 8,
+  "timeout-critical": 0,
+  "timeout-low": 4,
+  "transition-time": 200,
+  "widget-config": {
+    "dnd": {
+      "text": "Do not disturb"
+    },
+    "title": {
+      "button-text": "Clear all",
+      "clear-all-button": true,
+      "text": "Notifications"
+    }
+  },
+  "widgets": [
+    "title",
+    "dnd",
+    "notifications"
+  ]
+}

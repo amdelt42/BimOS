@@ -1,0 +1,167 @@
+[
+  {
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "{icon}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"waypaper\")'",
+      "tooltip-format": "{percent}%"
+    },
+    "battery": {
+      "events": {
+        "on-charging-100": "notify-send 'Battery Full!'",
+        "on-discharging-critical": "notify-send 'Very Low Battery'",
+        "on-discharging-warning": "notify-send 'Low Battery'"
+      },
+      "format": "{icon} ",
+      "format-charging": " ",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty bettery\")'",
+      "states": {
+        "critical": 15,
+        "warning": 30
+      }
+    },
+    "bluetooth": {
+      "format": "",
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty bluetui\")'",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty oryx\")'",
+      "tooltip-format": "{controller_alias} — {controller_address}",
+      "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+      "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+    "clock": {
+      "calendar": {
+        "format": {
+          "days": "<span color='#ffffff'>{}</span>",
+          "months": "<span color='#ffffff'><b>{}</b></span>",
+          "today": "<span color='#80bfff'><b>{}</b></span>",
+          "weekdays": "<span color='#80bfff'><b>{}</b></span>",
+          "weeks": "<span color='#ffffff'><b>W{}</b></span>"
+        }
+      },
+      "format": "<span color='#80bfff'></span>  <span color='#ffffff'>{:%H:%M}</span>",
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"flatpak run org.gnome.clocks\")'",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"flatpak run org.gnome.Weather\")'",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+      "format": "  {usage}%",
+      "interval": 2,
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty btop\")'",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty htop\")'"
+    },
+    "custom/camera": {
+      "exec-if": "command -v camera-status",
+      "exec": "camera-status",
+      "interval": 2,
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"flatpak run io.github.cosmic_utils.camera\")'",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty v4l-tui\")'",
+      "return-type": "json",
+      "tooltip": true
+    },
+    "custom/notifications": {
+      "format": "",
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"swaync-client -t\")'",
+      "tooltip": false
+    },
+    "group/leftpill": {
+      "modules": [
+        "backlight",
+        "custom/camera"
+      ],
+      "orientation": "horizontal"
+    },
+    "height": 34,
+    "hyprland/workspaces": {
+      "disable-scroll": true,
+      "format": "{id}",
+      "on-click": "activate",
+      "persistent-workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      },
+      "sort-by-number": true
+    },
+    "layer": "top",
+    "memory": {
+      "format": "  {used:0.1f}G",
+      "interval": 2,
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty dua i\")'"
+    },
+    "modules-center": [
+      "clock"
+    ],
+    "modules-left": [
+      "hyprland/workspaces",
+      "group/leftpill"
+    ],
+    "modules-right": [
+      "cpu",
+      "memory",
+      "network",
+      "bluetooth",
+      "pulseaudio",
+      "battery",
+      "custom/notifications",
+      "tray"
+    ],
+    "network": {
+      "format-disconnected": "󰤮 ",
+      "format-ethernet": "󰈀",
+      "format-icons": [
+        "󰤯",
+        "󰤟",
+        "󰤢",
+        "󰤥",
+        "󰤨"
+      ],
+      "format-wifi": "{icon} ",
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty impala\")'",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty nmtui\")'",
+      "tooltip-format": "{essid} — {ipaddr} ({signalStrength}%)",
+      "tooltip-format-disconnected": "Disconnected"
+    },
+    "position": "top",
+    "pulseaudio": {
+      "format": "{icon}  {volume}%",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "format-muted": "     ",
+      "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"kitty wiremix -v output\")'",
+      "on-click-right": "hyprctl dispatch 'hl.dsp.exec_cmd(\"qpwgraph\")'"
+    },
+    "tray": {
+      "icon-size": 16,
+      "spacing": 12
+    }
+  }
+]

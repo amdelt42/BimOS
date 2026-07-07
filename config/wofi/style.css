@@ -1,0 +1,59 @@
+window {
+  margin: 0px;
+  /*border: 1px solid alpha(#80bfff, 0.85);*/
+  border-radius: 16px;
+  background-color: alpha(#282a36, 0.85);
+  font-family: "CaskaydiaCove Nerd Font", sans-serif;
+  font-size: 13px;
+}
+
+#outer-box {
+  margin: 12px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+#input {
+  margin: 0 0 10px 0;
+  padding: 8px 12px;
+  border: 1px solid alpha(#80bfff, 0.85);
+  border-radius: 10px;
+  background-color: #282a36;
+  color: #ffffff;
+}
+
+#input image {
+  color: #6272a4;
+}
+
+#scroll {
+  margin: 0px;
+  background-color: transparent;
+}
+
+#inner-box {
+  background-color: transparent;
+}
+
+#entry {
+  padding: 6px 8px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+#entry:selected {
+  background-color: alpha(#80bfff, 0.85);
+}
+
+#text {
+  color: #ffffff;
+  margin: 0 6px;
+}
+
+#text:selected {
+  color: #ffffff;
+}
+
+#img {
+  margin: 0 4px;
+}
