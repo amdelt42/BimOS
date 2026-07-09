@@ -58,7 +58,8 @@
 		};
 
 		development = {
-			rust = {
+			rust.enable = true;
+			opencode = {
 				enable = true;
 			};
 		};

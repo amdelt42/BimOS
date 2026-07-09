@@ -29,6 +29,7 @@ in
       pciutils
       os-prober
       efibootmgr
+      trash-cli
     ];
 
     programs.btop.enable = true;

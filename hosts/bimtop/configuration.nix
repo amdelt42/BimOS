@@ -105,6 +105,7 @@
 				nix-ld.enable = true;
 				nixvim.enable = true;
 				oryx.enable = true;
+				llama-cpp.enable = true;
 			};
 		};
 	};
