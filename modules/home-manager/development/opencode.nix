@@ -23,8 +23,8 @@ in
               includeUsage = true;
             };
             models = {
-              "Jackrong/Qwen3.5-9B-DeepSeek-V4-Flash-GGUF:Q4_K_M" = {
-                name = "Qwen3.5-9B-DeepSeek-V4-Flash-GGUF (local)";
+              "llama.cpp (local)" = {
+                name = "llama.cpp (local)";
                 tool_call = true;
                 reasoning = true;
               };

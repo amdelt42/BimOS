@@ -53,15 +53,14 @@
 				utils.enable = true;
 				rice.enable = true;
 				media.enable = true;
+				tmux.enable = true;
 			};
 			
 		};
 
 		development = {
 			rust.enable = true;
-			opencode = {
-				enable = true;
-			};
+			opencode.enable = true;
 		};
 	};
 }

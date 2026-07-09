@@ -7,5 +7,6 @@
     ./utils.nix
     ./media.nix
     ./rice.nix
+    ./tmux.nix
   ];
 }
