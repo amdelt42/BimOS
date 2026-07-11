@@ -1,18 +1,29 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 with lib;
-let 
+let
   suffix = elemAt (splitString "/nixos/" (toString ./.)) 1;
-  path = [ "sys" ] ++ splitString "/" suffix ++ ["llama-cpp"];
+  path = [ "sys" ] ++ splitString "/" suffix ++ [ "llama-cpp" ];
   cfg = attrByPath path {} config;
-in 
+
+  system = pkgs.stdenv.hostPlatform.system;
+
+  turboquantCuda = (inputs.llama-cpp-turboquant.packages.${system}.cuda).overrideAttrs (old: {
+    cmakeFlags = (old.cmakeFlags or []) ++ [
+      "-DGGML_CUDA_FA_ALL_QUANTS=OFF"
+      "-DCMAKE_CUDA_ARCHITECTURES=86"
+    ];
+  });
+in
 {
   options = setAttrByPath path {
     enable = mkEnableOption "Enable llama.cpp";
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.config.allowUnfree = true;
+
     environment.systemPackages = [
-      (pkgs.llama-cpp.override { cudaSupport = true; })
+      turboquantCuda
     ];
   };
 }
