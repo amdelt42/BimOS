@@ -7,9 +7,10 @@ let
 
   system = pkgs.stdenv.hostPlatform.system;
 
-  turboquantCuda = (inputs.llama-cpp-turboquant.packages.${system}.cuda).overrideAttrs (old: {
+  llama-cpp = (inputs.llama-cpp.packages.${system}.cuda).overrideAttrs (old: {
     cmakeFlags = (old.cmakeFlags or []) ++ [
-      "-DGGML_CUDA_FA_ALL_QUANTS=OFF"
+      "-DGGML_CUDA=ON"
+      "-DGGML_CUDA_FA_ALL_QUANTS=ON"
       "-DCMAKE_CUDA_ARCHITECTURES=86"
     ];
   });
@@ -23,7 +24,7 @@ in
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = [
-      turboquantCuda
+      llama-cpp
     ];
   };
 }

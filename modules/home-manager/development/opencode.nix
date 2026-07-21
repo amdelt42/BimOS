@@ -27,6 +27,10 @@ in
                 name = "llama.cpp (local)";
                 tool_call = true;
                 reasoning = true;
+                modalities = {
+                  input = [ "text" "image" "audio" ];
+                  output = [ "text" ];
+                };
               };
             };
           };

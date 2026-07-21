@@ -39,12 +39,12 @@
       url = "github:sermuns/v4l-tui";
       flake = false;
     };
-    llama-cpp-turboquant = {
-      url = "github:TheTom/llama-cpp-turboquant/pull/195/head";
+    llama-cpp = {
+      url = "github:PrismML-Eng/llama.cpp";
     };
   };
 
-  outputs = { self, nixpkgs, stylix, nixvim, nix-index-database, nix-flatpak, home-manager, agenix, llama-cpp-turboquant,... }@inputs:
+  outputs = { self, nixpkgs, stylix, nixvim, nix-index-database, nix-flatpak, home-manager, agenix, llama-cpp,... }@inputs:
   let
     lib = nixpkgs.lib;
 
