@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, stylix, ... }:
 with lib;
 let 
   suffix = elemAt (splitString "/nixos/" (toString ./.)) 1;
@@ -22,7 +22,12 @@ in
       enable = true;
       theme = lib.mkForce "bgrt";
     };
-    
+
+    stylix.targets.grub.enable = false;
+    boot.loader.grub = {
+      backgroundColor = lib.mkForce "#000000";
+      splashImage = lib.mkForce null;
+    };
     
   };
 }

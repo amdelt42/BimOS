@@ -31,6 +31,8 @@ in
         { appId = "org.gnome.clocks"; origin = "flathub"; }
         { appId = "org.gnome.Weather"; origin = "flathub"; }
         { appId = "info.beyondallreason.bar"; origin = "flathub"; }
+        { appId = "org.vinegarhq.Sober"; origin = "flathub"; }
+        { appId = "com.slack.Slack"; origin = "flathub"; }
       ];
     }; 
   };

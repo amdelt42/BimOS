@@ -18,6 +18,7 @@ let
     drawio = drawio;
     obsidian = obsidian;
     tradingview = tradingview;
+    ltspice = ltspice;
   };
 
   # For each app: true = force on, false = force off, null = "no opinion,

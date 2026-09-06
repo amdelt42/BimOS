@@ -16,15 +16,14 @@
   boot = {
 		loader = { 
 			systemd-boot.enable = false;
-			efi.canTouchEfiVariables = false;
+			efi.canTouchEfiVariables = true;
 			efi.efiSysMountPoint = "/boot";
+			timeout = 0; #countdown in seconds
 			grub = {
 				enable = true;
 				device = "nodev";
 				efiSupport = true;
-				efiInstallAsRemovable = true;
-				useOSProber = false;
-				#forceInstall = false;
+				useOSProber = true;
 				configurationLimit = 10;
 			};
 		};
@@ -117,7 +116,9 @@
 	};
 
 	nixpkgs.config.permittedInsecurePackages = [ "ventoy-1.1.12"	];
-	environment.systemPackages = [ pkgs.ventoy ];
+	environment.systemPackages = with pkgs; [ 
+		ventoy 
+	];
 	services.openssh.enable = true;
 
 	# State Version

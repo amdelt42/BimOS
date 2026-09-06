@@ -30,6 +30,7 @@ in
       os-prober
       efibootmgr
       trash-cli
+      unrar
     ];
 
     programs.btop.enable = true;

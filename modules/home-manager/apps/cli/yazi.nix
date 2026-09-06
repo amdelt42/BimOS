@@ -21,7 +21,7 @@ in
       };
       mimeApps.defaultApplications."inode/directory" = mkDefault "yazi.desktop";
     };
-
+    
     programs.yazi = {
       enable = true;
       plugins = {
