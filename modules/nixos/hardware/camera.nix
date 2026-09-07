@@ -14,9 +14,9 @@ let
       owner = "sermuns";
       repo = "v4l-tui";
       rev = "main";
-      sha256 = "sha256-f2AFDPCRZjkVqFf4jm06ErqSfkvwqSXHkxipT6TSV2s=";
+      sha256 = "sha256-k3RBOxxUjb5otgdjZv2/nT7jyXtNATOGCX9RkymoTDc=";
     };
-    cargoHash = "sha256-fnPcgqLgCVSanIrRtimV0p1ifbk7nZ01y+uym2q4Vcw=";
+    cargoHash = "sha256-jzHRDLOuHrKD5gTmaCbni4WZSAEeuXEFRfwOK3rvUzE=";
     nativeBuildInputs = [ pkgs.llvmPackages.libclang pkgs.linuxHeaders ];
     LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
     BINDGEN_EXTRA_CLANG_ARGS = "-I${pkgs.linuxHeaders}/include -I${pkgs.glibc.dev}/include";

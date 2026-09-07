@@ -24,6 +24,7 @@
         efiSysMountPoint = "/boot";
       };
     };
+    kernelPackages = pkgs.linuxPackages_latest;
   };
   
   programs.zsh.enable = true;

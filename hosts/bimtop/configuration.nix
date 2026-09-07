@@ -28,6 +28,7 @@
 			};
 		};
 		# legion specific kernel module
+		kernelPackages = pkgs.linuxPackages_7_1;
 		kernelModules = [ "lenovo-legion-module" ];
     extraModulePackages = with config.boot.kernelPackages; [
       lenovo-legion-module

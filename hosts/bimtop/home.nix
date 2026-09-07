@@ -62,6 +62,7 @@
 			c.enable = true;
 			rust.enable = true;
 			opencode.enable = true;
+			java.enable = true;
 		};
 	};
 }

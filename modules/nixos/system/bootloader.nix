@@ -11,11 +11,6 @@ in
 	};
 
 	config = mkIf cfg.enable {
-    # use latest kernel
-    boot = {
-      kernelPackages = pkgs.linuxPackages_latest;
-    };
-
     # smooth boot splash
     boot.kernelParams = [ "quiet" "splash" ];
     boot.plymouth = {
