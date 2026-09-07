@@ -19,6 +19,7 @@ let
     obsidian = obsidian;
     tradingview = tradingview;
     ltspice = ltspice;
+    digital = digital;
   };
 
   # For each app: true = force on, false = force off, null = "no opinion,

@@ -13,7 +13,7 @@ in
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       temurin-bin-25
-      temurin-jre-bin-25
+      #temurin-jre-bin-25
     ];
   };
 }
