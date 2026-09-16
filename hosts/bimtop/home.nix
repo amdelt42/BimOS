@@ -34,7 +34,6 @@
 					# lutris = false;
 					all = true;
 				};
-				kicad.enable = true;
 				flatpak.enable = true;
 				librewolf.enable = true;
 				vscode.enable = true;
