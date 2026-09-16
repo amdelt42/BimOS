@@ -8,7 +8,6 @@ let
   # name -> package. Add/remove apps by editing only this list.
   apps = with pkgs; {
     discord = discord;
-    kicad = kicad;
     orca-slicer = orca-slicer;
     libreoffice = libreoffice;
     obs-studio = obs-studio;

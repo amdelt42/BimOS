@@ -29,6 +29,7 @@ in
       gamemode         # Performance optimizer
       vulkan-tools     # vulkaninfo, vkcube for testing
       gamescope        # Run games in a microcompositor
+      steamcmd         # Steam command-line interface
     ];
 
     # ProtonUp Path

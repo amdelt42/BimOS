@@ -4,6 +4,18 @@ let
   suffix = elemAt (splitString "/nixos/" (toString ./.)) 1;
   path = [ "sys" ] ++ splitString "/" suffix ++ ["nix-ld"];
   cfg = attrByPath path {} config;
+
+  # Merge and compile GSettings schemas from any packages that ship them.
+  # Add more packages here if other foreign/unwrapped binaries need their schemas too.
+  mySchemas = pkgs.runCommand "merged-gsettings-schemas" {
+    nativeBuildInputs = [ pkgs.glib ];
+  } ''
+    mkdir -p $out/glib-2.0/schemas
+    find ${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas -name "*.gschema.xml" -exec cp {} $out/glib-2.0/schemas/ \;
+    find ${pkgs.gtk3}/share/gsettings-schemas -name "*.gschema.xml" -exec cp {} $out/glib-2.0/schemas/ \; 2>/dev/null || true
+    find ${pkgs.glib}/share/glib-2.0/schemas -name "*.gschema.xml" -exec cp {} $out/glib-2.0/schemas/ \; 2>/dev/null || true
+    glib-compile-schemas $out/glib-2.0/schemas
+  '';
 in 
 {
   options = setAttrByPath path {
@@ -11,6 +23,13 @@ in
   };
   
   config = mkIf cfg.enable {
+    environment.variables.GSETTINGS_SCHEMA_DIR = "${mySchemas}/glib-2.0/schemas";
+
+    environment.systemPackages = with pkgs; [
+      glib
+      gsettings-desktop-schemas
+    ];
+
     # Nix-LD (Traditional style loader for executables)
     programs.nix-ld = {
       enable = true;
@@ -40,6 +59,8 @@ in
         libglvnd
         libgbm
         mesa
+        vulkan-loader
+        vulkan-tools
 
         # X11 / XCB & Input Libraries
         libxkbcommon

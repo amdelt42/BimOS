@@ -116,6 +116,9 @@
 		secret-key-files = [ "/etc/nix/signing-key.sec" ];
 	};
 
+	# Enable D-Bus session
+  programs.dconf.enable = true;
+
 	nixpkgs.config.permittedInsecurePackages = [ "ventoy-1.1.12"	];
 	environment.systemPackages = with pkgs; [ 
 		ventoy 
