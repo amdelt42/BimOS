@@ -19,7 +19,6 @@ let
     tradingview = tradingview;
     ltspice = ltspice;
     digital = digital;
-    kicad = kicad;
   };
 
   # For each app: true = force on, false = force off, null = "no opinion,

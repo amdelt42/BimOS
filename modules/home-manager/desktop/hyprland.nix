@@ -25,6 +25,7 @@ in
         hyprpicker
         wl-clipboard
         brightnessctl
+        nwg-displays
 
         # screenshot
         grim

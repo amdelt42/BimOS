@@ -13,6 +13,12 @@ in
 			default = !cfg.prime.enable;
 			description = "Whether Nvidia should own LIBVA_DRIVER_NAME. Defaults to false when PRIME offload is enabled (Intel handles VAAPI), true otherwise (Nvidia-primary setups).";
 		};
+		package = mkOption {
+			type = types.package;
+			default = config.boot.kernelPackages.nvidiaPackages.stable;
+			defaultText = literalExpression "config.boot.kernelPackages.nvidiaPackages.stable";
+			description = "The Nvidia driver package to use. Override per-host when the stable channel package doesn't build against your kernel.";
+		};
 		prime = {
 			enable = mkEnableOption "Enable PRIME Hybrid Offload";
 			intelBusId = mkOption {
@@ -64,7 +70,7 @@ in
 				powerManagement.finegrained = false;
 				open = true;  
 				nvidiaSettings = true;
-				package = config.boot.kernelPackages.nvidiaPackages.stable;
+				package = cfg.package;
 
 				# prime 
 				prime = mkIf cfg.prime.enable {

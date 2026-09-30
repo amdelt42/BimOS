@@ -96,5 +96,19 @@
     group = "users";
   };
 
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+
+    virtualHosts."bim.printer" = {
+      locations."/" = {
+        proxyPass = "http://192.168.1.89:4409";
+        proxyWebsockets = true;  
+      };
+    };
+  };
+
+  networking.firewall.allowedTCPPorts = [ 80 ];
+
   system.stateVersion = "26.05";
 }

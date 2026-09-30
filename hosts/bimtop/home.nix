@@ -1,4 +1,4 @@
-{ homeuser, ... }:
+{ homeuser, pkgs, ... }:
 {
   imports = [
     ../../modules/home-manager/default.nix
@@ -20,6 +20,12 @@
 		};
 	};
 
+	services.fluidsynth = {
+		enable = true;
+		soundFont = "${pkgs.soundfont-fluid}/share/soundfonts/FluidR3_GM2-2.sf2";
+		soundService = "pipewire-pulse";
+	};
+
 	hm = {
 		desktop = {
 			hyprlock.enable = true;
@@ -38,6 +44,7 @@
 				librewolf.enable = true;
 				vscode.enable = true;
 				udiskie.enable = true;
+				kicad.enable = true;
 			};
 			cli = {
 				zsh = {

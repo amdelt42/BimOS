@@ -52,6 +52,9 @@ in
       winetricks
       tuxguitar
       ardour-pw
+      fluidsynth 
+      soundfont-fluid
+      powertabeditor
       (makeDesktopItem {
         name = "ardour-pw";
         desktopName = "Ardour";
